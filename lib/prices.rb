@@ -8,6 +8,8 @@ module Prices
       },
       type: {
         "cheese": 3.00,
+        "black olive": 6.00,
+        "pepperoni": 6.00,
         "special": 6.00
       },
       crust: {
