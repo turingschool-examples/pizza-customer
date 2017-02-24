@@ -18,7 +18,6 @@ class PizzaTest < Minitest::Test
       type: "cheese",
       crust: "deep dish"
     }
-
     assert_equal new_order, pizza.full_order
   end
 
@@ -27,6 +26,7 @@ class PizzaTest < Minitest::Test
   end
 
   def test_calculate_another_price
+    skip
     pizza_2 = Pizza.new("large", "black olive", "thin")
 
     assert_equal 15.00, pizza_2.calculate_price

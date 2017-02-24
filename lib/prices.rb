@@ -1,5 +1,5 @@
 module Prices
-  def pizza_prices
+  def self.pizza_prices
     {
       size: {
         "small": 4.00,
