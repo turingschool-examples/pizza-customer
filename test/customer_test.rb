@@ -2,6 +2,7 @@ require './test/test_helper'
 
 require './lib/customer'
 require './lib/pizza'
+require 'date'
 
 class CustomerTest < Minitest::Test
   attr_reader :customer, :pizza
