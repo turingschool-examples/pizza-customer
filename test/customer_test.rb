@@ -70,4 +70,5 @@ class CustomerTest < Minitest::Test
 
     assert_equal 3, customer.order_frequency
     refute customer.frequent_customer?
+  end
 end
