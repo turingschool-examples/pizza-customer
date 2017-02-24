@@ -1,4 +1,5 @@
 module Prices
+
   def pizza_prices
     {
       size: {
@@ -18,3 +19,11 @@ module Prices
     }
   end
 end
+
+
+type: {
+  "cheese": 3.00,
+  "black olive": 6.00,
+  "pepperoni": 6.00,
+  "special": 6.00
+},
