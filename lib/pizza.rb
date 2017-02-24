@@ -18,7 +18,11 @@ class Pizza
   end
 
   def calculate_price
-    
+    sized = pizza_prices[:size][size.to_sym]
+    typed = pizza_prices[:type][type.to_sym]
+    crusted = pizza_prices[:crust][crust.to_sym]
+
+    total = sized + typed + crusted  
   end
 
 end
