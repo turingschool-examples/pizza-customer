@@ -7,7 +7,7 @@ class Customer
 		@phone = phone_number
 		@order = false
 		@frequency = []
-		@count = 0
+		@frequency_count = 0
 	end
 
 	def profile
@@ -29,14 +29,14 @@ class Customer
 	end
 
 	def frequent_customer?
-		
+		 
 		@frequency.each do |time|
 			if Range.new(DateTime.now.to_date - 14, DateTime.now.to_date).include?(time.to_date)
-				@count += 1
+				@frequency_count += 1
 			end
 		end
 
-		if @count > 2 
+		if @frequency_count > 2 
 			true
 		end
 	end
