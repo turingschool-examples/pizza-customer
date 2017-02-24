@@ -37,9 +37,7 @@ class CustomerTest < Minitest::Test
 
   def test_order_frequency
     assert_equal 0, customer.order_frequency
-
     customer.place_order(pizza, DateTime.now)
-
     assert_equal 1, customer.order_frequency
   end
 
@@ -53,6 +51,7 @@ class CustomerTest < Minitest::Test
     3.times do
       customer.place_order(pizza, DateTime.now)
     end
+
 
     assert_equal 3, customer.order_frequency
     assert customer.frequent_customer?
