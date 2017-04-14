@@ -32,19 +32,24 @@ class Customer
 
   def frequent_customer?
     today = DateTime.now
-    previous_month = today - 30
+    last_month = today - 30
 
     if @order_record.count >= 3
-      counter = 0 
-      until counter == 3 do
-        validation = []
-        @order_record.each do |value_pair|
-          validation << (value_pair[0] > previous_month)
-        end
-        counter += 1
-      end
-      validation.all? { |value| value == true}
+      validate_last_3_orders(last_month).all? { |value| value == true}
     end
+
+  end
+
+  def validate_last_3_orders(last_month)
+    counter = 0
+    validation = []
+    until counter == 3 do
+      counter += 1
+      @order_record.each do |value_pair|
+        validation << (value_pair[0] > last_month)
+      end
+    end
+    validation
   end
 
 end
