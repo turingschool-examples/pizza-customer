@@ -83,8 +83,6 @@
     
     <li ><a href="#method-i-profile">#profile</a>
     
-    <li ><a href="#method-i-three_within_thirty">#three_within_thirty</a>
-    
   </ul>
 </div>
 
@@ -339,45 +337,6 @@ places the order and grabs the pizza from the pizza class</p>
     <span class="ruby-value">:address</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@address</span>,
     <span class="ruby-value">:phone</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@phone</span>
   }
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-      <div id="method-i-three_within_thirty" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">three_within_thirty</span><span
-            class="method-args">()</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>three within thirty checks if the orders were within 30 days of eachother..</p>
-          
-          
-
-          
-          <div class="method-source-code" id="three_within_thirty-source">
-            <pre><span class="ruby-comment"># File lib/customer.rb, line 64</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">three_within_thirty</span>
-  <span class="ruby-identifier">first</span> = <span class="ruby-ivar">@orders</span>[<span class="ruby-value">0</span>]
-  <span class="ruby-identifier">third</span> = <span class="ruby-ivar">@orders</span>[<span class="ruby-value">2</span>]
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">first</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">third</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">30</span>
-    <span class="ruby-keyword">false</span>
-  <span class="ruby-keyword">else</span>
-    <span class="ruby-keyword">true</span>
-  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
