@@ -1,5 +1,5 @@
 require './test/test_helper'
-
+require 'date'
 require './lib/customer'
 require './lib/pizza'
 
@@ -24,17 +24,17 @@ class CustomerTest < Minitest::Test
 
     assert_equal profile, customer.profile
   end
-  #
-  # def test_order_in_place?
-  #   refute customer.order_in_place?
-  # end
-  #
-  # def test_place_order
-  #   customer.place_order(pizza, DateTime.now)
-  #
-  #   assert customer.order_in_place?
-  # end
-  #
+
+  def test_order_in_place?
+    refute customer.order_in_place?
+  end
+
+  def test_place_order
+    customer.place_order(pizza, DateTime.now)
+
+    assert customer.order_in_place?
+  end
+
   # def test_order_frequency
   #   assert_equal 0, customer.order_frequency
   #
