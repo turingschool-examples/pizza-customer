@@ -20,10 +20,17 @@ class Pizza
   end
 
   def calculate_price
+    get_price.reduce(0) { |sum, price| sum + price}
+  end
+
+  def get_price
     individual_price = []
+
     full_order.each do |attribute, selection|
       individual_price << pizza_prices[attribute][selection.to_sym]
     end
-    individual_price.reduce(0) { |sum, price| sum + price}
+
+    individual_price
   end
+
 end
