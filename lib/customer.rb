@@ -30,8 +30,10 @@ class Customer
   end
 
   def frequent_customer?
-    if @order_frequency > 2
-      @order_record.count(DateTime.now
+    back_in_the_day = DateTime.now - 30
+    recent_frequency = @order_record.count { |day| day > back_in_the_day }
+    if recent_frequency > 2
+      true
     else
       false
     end
