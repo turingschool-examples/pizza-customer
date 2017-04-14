@@ -1,6 +1,8 @@
 require "pry"
+require_relative 'prices'
 
 class Pizza
+include Prices
 attr_reader :size, :type, :crust
 
   def initialize(size = nil, type = nil, crust = nil)
@@ -19,11 +21,31 @@ attr_reader :size, :type, :crust
   end
 
   def calculate_price
-    prices = {
-      size: {"small" => 6.00, "medium" => 7.50, "large" => 9.50},
-      type: {"cheese" => 3.00, "veggie" => 2.00, "pineapple" => 2.00},
-      crust: {"deep_dish" => 3.00, "thin" => 2.50, "thick" => 5.00}
-              }
+    info = []
+    pizza_prices[:size].each_pair do |key, value|
+      if key == @size.to_sym
+      info << value
+      end
+    end
+    pizza_prices[:type].each_pair do |key, value|
+      if key == @type.to_sym
+      info << value
+      end
+    end
+    pizza_prices[:crust].each_pair do |key, value|
+      if key == @crust.to_sym
+      info << value
+      end
+    end
+    info.reduce(0) {|a, sum| a + sum}
+  end
+
+  def exists?
+    if name == nil
+      return false
+    else
+      return true
+    end
   end
 
 end
