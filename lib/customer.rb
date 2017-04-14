@@ -27,6 +27,13 @@ class Customer
   end
 
   def frequent_customer?
-    @order_dates.length >= 3
+    recent = count_recent_orders
+    recent >= 3
+  end
+
+  def count_recent_orders
+    @order_dates.count do |date|
+      date >= DateTime.now - 30
+    end
   end
 end
