@@ -8,12 +8,13 @@ module Prices
       },
       type: {
         "cheese": 3.00,
-        "special": 6.00
+        "special": 6.00,
+        "blackolive": 6.00
       },
       crust: {
         "regular": 3.00,
         "thin": 2.00,
-        "deep dish": 4.00
+        "deepdish": 4.00
       }
     }
   end

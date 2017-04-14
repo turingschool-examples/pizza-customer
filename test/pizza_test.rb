@@ -5,7 +5,7 @@ class PizzaTest < Minitest::Test
   attr_reader :pizza
 
   def setup
-    @pizza = Pizza.new("medium", "cheese", "deep dish")
+    @pizza = Pizza.new("medium", "cheese", "deepdish")
   end
 
   def test_it_exists
@@ -16,7 +16,7 @@ class PizzaTest < Minitest::Test
     new_order = {
       size: "medium",
       type: "cheese",
-      crust: "deep dish"
+      crust: "deepdish"
     }
 
     assert_equal new_order, pizza.full_order
@@ -27,8 +27,7 @@ class PizzaTest < Minitest::Test
   end
 
   def test_calculate_another_price
-    pizza_2 = Pizza.new("large", "black olive", "thin")
-
+    pizza_2 = Pizza.new("large", "blackolive", "thin")
     assert_equal 15.00, pizza_2.calculate_price
   end
 end
