@@ -17,8 +17,16 @@ class Pizza
 
   def calculate_price
     full_order.reduce(0) do |sum, (option, selection)|
-      # binding.pry
-      sum + pizza_prices[option][selection.to_sym]
+      if option == :type
+        cost = calculate_type_price(option,selection)
+      else
+        cost = pizza_prices[option][selection.to_sym]
+      end
+      sum + cost
     end
+  end
+
+  def calculate_type_price(option,selection)
+    pizza_prices[option][selection.to_sym] || pizza_prices[option][:special]
   end
 end
