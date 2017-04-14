@@ -1,9 +1,10 @@
 class Customer
-  attr_reader :name, :address, :phone, :order
+  attr_reader :name, :address, :phone, :orders
   def initialize(*args)
     @name = args[0]
     @address = args[1]
     @phone = args[2]
+    @orders = []
   end
 
   def profile
@@ -15,10 +16,14 @@ class Customer
   end
 
   def place_order(pizza, time)
-    @order = {pizza: pizza, time: time}
+    orders << {pizza: pizza, time: time}
   end
 
   def order_in_place?
-    !@order.nil?
+    !orders.empty?
+  end
+
+  def order_frequency
+    orders.length
   end
 end
