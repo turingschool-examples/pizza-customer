@@ -6,4 +6,12 @@ class Customer
     @phone = phone
   end
 
+  def profile
+    {
+      :name    => @name,
+      :address => @address,
+      :phone   => @phone
+    }
+
+  end
 end

@@ -10,9 +10,10 @@ class Pizza
 
 
   def full_order
-    hash = {:size => @size,
-            :type => @type,
-            :crust => @crust
+    {
+      :size  => @size,
+      :type  => @type,
+      :crust => @crust
     }
   end
 
