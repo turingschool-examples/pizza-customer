@@ -6,14 +6,16 @@ class Pizza
     @crust = crust
   end
 
-  def new_order(args)
-    size = args[:size]
-    type = args[:type]
-    crust = args[:crust]
-
-  end
 
   def full_order
+    hash = {:size => 'medium',
+            :type => 'cheese',
+            :crust => 'deep dish'
+    }
+  end
+
+  def calculate_price
+
   end
 
 end
