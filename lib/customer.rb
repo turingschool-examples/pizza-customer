@@ -22,7 +22,7 @@ class Customer
   end
 
   def place_order(pizza, time)
-    p = Pizza.new([:size], [:type], [:crust])
+    order = Pizza.new([:size], [:type], [:crust])
     @orders << time
     @order_in_place = true
   end
@@ -30,6 +30,23 @@ class Customer
   def order_frequency
     @orders.count
   end
-  
+
+  def frequent_customer?
+    if @orders.count < 3 || !three_within_thirty
+      false
+    else
+      true
+    end
+  end
+
+  def three_within_thirty
+    first = @orders[0]
+    third = @orders[2]
+    if first - third > 30
+      false
+    else
+      true
+    end
+  end
   
 end
