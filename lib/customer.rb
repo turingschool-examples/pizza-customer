@@ -7,5 +7,12 @@ class Customer
       address: args[1],
       phone: args[2]
     }
+    @order = nil
   end
+
+  def order_in_place?
+    !!@order
+  end
+
+  
 end
