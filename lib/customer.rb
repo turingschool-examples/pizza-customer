@@ -41,14 +41,12 @@ class Customer
   end
 
   def validate_last_3_orders(last_month)
-    counter = 0
     validation = []
-    until counter == 3 do
-      counter += 1
-      @order_record.each do |value_pair|
-        validation << (value_pair[0] > last_month)
-      end
+
+    3.times do
+      validation = @order_record.map {|value_pair| value_pair[0] > last_month}
     end
+
     validation
   end
 
