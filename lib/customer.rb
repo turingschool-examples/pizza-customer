@@ -7,10 +7,18 @@ class Customer
       :address => address,
       :phone => phone
     }
-    @orders = 0
+    @orders = []
   end
 
   def order_in_place?
-    return false if orders == 0
+    if orders.empty?
+      false
+    else
+      true
+    end
+  end
+
+  def place_order(pizza, time)
+    orders << pizza
   end
 end
