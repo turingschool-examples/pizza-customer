@@ -3,8 +3,8 @@ class Pizza
   include Prices
 
   def initialize(size, type, crust)
-    @size = size
-    @type = type
+    @size  = size
+    @type  = type
     @crust = crust
   end
 
