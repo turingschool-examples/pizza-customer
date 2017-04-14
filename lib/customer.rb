@@ -18,6 +18,6 @@ class Customer
   end
 
   def place_order(item, time)
-
+    @status = true
   end
 end

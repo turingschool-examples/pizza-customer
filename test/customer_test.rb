@@ -45,7 +45,6 @@ class CustomerTest < Minitest::Test
   end
 
   def test_frequent_customer?
-    skip
     refute customer.frequent_customer?
   end
 
