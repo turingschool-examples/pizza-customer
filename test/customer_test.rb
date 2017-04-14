@@ -44,12 +44,10 @@ class CustomerTest < Minitest::Test
   end
 
   def test_frequent_customer?
-    skip
     refute customer.frequent_customer?
   end
 
   def test_customer_becomes_frequent_after_3_orders_in_past_30_days
-    skip
     refute customer.frequent_customer?
 
     3.times do
