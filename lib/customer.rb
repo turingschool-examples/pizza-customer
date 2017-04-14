@@ -1,5 +1,5 @@
 class Customer
-  attr_reader :profile, :order_in_place
+  attr_reader :profile, :orders
 
   def initialize(name, address, phone)
     @profile = {
@@ -7,6 +7,10 @@ class Customer
       :address => address,
       :phone => phone
     }
-    @order_in_place = false
+    @orders = 0
+  end
+
+  def order_in_place?
+    return false if orders == 0
   end
 end
