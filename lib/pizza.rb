@@ -10,7 +10,7 @@ include Prices
   end
 
   def full_order
-    order = {
+    {
       size: @size,
       type: @type,
       crust: @crust
