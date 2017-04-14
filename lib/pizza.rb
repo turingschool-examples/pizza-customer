@@ -40,12 +40,4 @@ attr_reader :size, :type, :crust
     info.reduce(0) {|a, sum| a + sum}
   end
 
-  def exists?
-    if name == nil
-      return false
-    else
-      return true
-    end
-  end
-
 end
