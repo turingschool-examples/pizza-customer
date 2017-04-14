@@ -21,29 +21,32 @@ class CustomerTest < Minitest::Test
       address: "1700 Blake St.",
       phone: "505-110-1001"
     }
-
+      # binding.pry
     assert_equal profile, customer.profile
   end
 
-  def test_order_in_place?
+  def test_order_in_place?    
     refute customer.order_in_place?
   end
 
   def test_place_order
+   
     customer.place_order(pizza, DateTime.now)
-
+  
     assert customer.order_in_place?
   end
 
   def test_order_frequency
+      # binding.pry
     assert_equal 0, customer.order_frequency
-
+   
     customer.place_order(pizza, DateTime.now)
-
+#  binding.pry
     assert_equal 1, customer.order_frequency
   end
 
   def test_frequent_customer?
+   
     refute customer.frequent_customer?
   end
 
@@ -55,6 +58,7 @@ class CustomerTest < Minitest::Test
     end
 
     assert_equal 3, customer.order_frequency
+    # binding.pry
     assert customer.frequent_customer?
   end
 
@@ -67,7 +71,7 @@ class CustomerTest < Minitest::Test
     customer.place_order(pizza, DateTime.now)
     customer.place_order(pizza, long_ago_time)
     customer.place_order(pizza, even_longer_ago)
-
+    # binding.pry
     assert_equal 3, customer.order_frequency
     refute customer.frequent_customer?
   end
