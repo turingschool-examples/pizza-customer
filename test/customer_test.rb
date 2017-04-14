@@ -6,6 +6,7 @@ require './lib/pizza'
 class CustomerTest < Minitest::Test
   attr_reader :customer, :pizza
 
+
   def setup
     @customer = Customer.new("Lauren", "1700 Blake St.", "505-110-1001")
     @pizza = Pizza.new("small", "black olive", "thin")
