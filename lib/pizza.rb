@@ -1,6 +1,8 @@
 require 'pry'
+require './lib/prices'
 
 class Pizza
+  include Prices
   def initialize(*args)
     @order = {
       size: args[0],
@@ -11,5 +13,12 @@ class Pizza
 
   def full_order
     @order
+  end
+
+  def calculate_price
+    full_order.reduce(0) do |sum, (option, selection)|
+      # binding.pry
+      sum + pizza_prices[option][selection.to_sym]
+    end
   end
 end
