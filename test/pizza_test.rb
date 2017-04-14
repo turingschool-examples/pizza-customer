@@ -18,7 +18,7 @@ class PizzaTest < Minitest::Test
       type: "cheese",
       crust: "deep dish"
     }
-
+    
     assert_equal new_order, pizza.full_order
   end
 
