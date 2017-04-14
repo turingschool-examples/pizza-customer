@@ -1,5 +1,8 @@
 require './test/test_helper'
 require './lib/pizza'
+require './lib/prices'
+require 'pry'
+
 
 class PizzaTest < Minitest::Test
   attr_reader :pizza
