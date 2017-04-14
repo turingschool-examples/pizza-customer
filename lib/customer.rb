@@ -1,5 +1,6 @@
+require 'pry'
 class Customer
-  attr_reader :profile, :orders
+  attr_reader :profile, :orders, :order_frequency
 
   def initialize(name, address, phone)
     @profile = {
@@ -7,7 +8,9 @@ class Customer
       :address => address,
       :phone => phone
     }
-    @orders = []
+    @orders = {}
+    @order_frequency = 0
+    @frequent = nil
   end
 
   def order_in_place?
@@ -19,6 +22,19 @@ class Customer
   end
 
   def place_order(pizza, time)
-    orders << pizza
+    @order_frequency += 1
+    orders[pizza] = time
+  end
+
+  def frequent_customer?
+    if orders.count < 3
+      false
+    elsif 
+      true
+    end
+  end
+
+  def last_30_days
+    binding.pry
   end
 end
