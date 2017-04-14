@@ -1,15 +1,19 @@
+require './lib/prices'
+
 class Pizza
-  def initialize(size, topping, style)
+  include Prices
+
+  def initialize(size, type, crust)
     @size = size
-    @topping = topping
-    @style = style
+    @type = type
+    @crust = crust
   end
 
   def full_order
-    Hash[ size: @size, type: @topping, crust: @style ]
+    Hash[ size: @size, type: @type, crust: @crust ]
   end
 
   def calculate_price
-
+    pizza_prices.values_at(@size, @type, @crust)
   end
 end
