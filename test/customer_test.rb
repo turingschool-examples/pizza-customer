@@ -16,6 +16,7 @@ class CustomerTest < Minitest::Test
   end
 
   def test_customer_profile
+
     profile = {
       name: "Lauren",
       address: "1700 Blake St.",
@@ -26,16 +27,19 @@ class CustomerTest < Minitest::Test
   end
 
   def test_order_in_place?
+
     refute customer.order_in_place?
   end
 
   def test_place_order
+
     customer.place_order(pizza, DateTime.now)
 
     assert customer.order_in_place?
   end
 
   def test_order_frequency
+
     assert_equal 0, customer.order_frequency
 
     customer.place_order(pizza, DateTime.now)
@@ -44,6 +48,7 @@ class CustomerTest < Minitest::Test
   end
 
   def test_frequent_customer?
+
     refute customer.frequent_customer?
   end
 
@@ -59,6 +64,7 @@ class CustomerTest < Minitest::Test
   end
 
   def test_customer_not_frequent_with_more_than_3_orders_in_more_than_30_days
+
     refute customer.frequent_customer?
 
     long_ago_time   = DateTime.new(2016, 11, 19)
