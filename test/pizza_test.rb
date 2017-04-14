@@ -23,6 +23,8 @@ class PizzaTest < Minitest::Test
   end
 
   def test_calculate_price
+    pizza = Pizza.new("medium", "cheese", "deep dish")
+
     assert_equal 12.50, pizza.calculate_price
   end
 
