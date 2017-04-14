@@ -4,7 +4,7 @@ class Pizza
   include Prices
 
   attr_reader :size, :type, :crust
-  
+
   def initialize(size, type, crust)
     @size = size
     @type = type
@@ -20,10 +20,10 @@ class Pizza
   end
 
   def calculate_price
-    get_price.reduce(0) { |sum, price| sum + price}
+    find_price.reduce(0) { |sum, price| sum + price}
   end
 
-  def get_price
+  def find_price
     individual_price = []
 
     full_order.each do |attribute, selection|
@@ -32,5 +32,4 @@ class Pizza
 
     individual_price
   end
-
 end

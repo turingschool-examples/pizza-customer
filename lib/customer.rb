@@ -37,7 +37,6 @@ class Customer
     if @order_record.count >= 3
       validate_last_3_orders(last_month).all? { |value| value == true}
     end
-
   end
 
   def validate_last_3_orders(last_month)
@@ -49,5 +48,4 @@ class Customer
 
     validation
   end
-
 end
