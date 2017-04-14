@@ -1,5 +1,5 @@
 require './test/test_helper'
-
+require 'time'
 require './lib/customer'
 require './lib/pizza'
 

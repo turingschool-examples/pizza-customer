@@ -1,3 +1,5 @@
+
+
 class Customer
   attr_accessor :status
   def initialize(name, address, phone)
@@ -13,5 +15,9 @@ class Customer
 
   def order_in_place?
     @status
+  end
+
+  def place_order(item, time)
+
   end
 end
