@@ -26,4 +26,8 @@ class Customer
   def order_frequency
     orders.length
   end
+
+  def frequent_customer?
+    true if orders.length > 2
+  end
 end
