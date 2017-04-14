@@ -1,4 +1,7 @@
 require './lib/prices'
+##
+# Pizza class builds the pizza and retrieves the prices
+
 class Pizza
   include Prices
 
@@ -8,6 +11,9 @@ class Pizza
     @crust = crust
   end
 
+  ##
+  # Full order gets the full order from the initialize and puts it into
+  # a hash
 
   def full_order
     {
@@ -16,6 +22,9 @@ class Pizza
       :crust => @crust
     }
   end
+
+  ##
+  # Calculate price gets the total price of the pizza
 
   def calculate_price
     pizza_prices[:size][@size.to_sym] + 

@@ -1,4 +1,11 @@
+##
+# Prices holds all the different options for pices!
+
 module Prices
+  
+  ##
+  # pizza prices holds the prices specific for pizzas
+
   def pizza_prices
     {
       size: {
