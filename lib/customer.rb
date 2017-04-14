@@ -1,13 +1,13 @@
 
 
 class Customer
-  attr_accessor :status, :orders
+  attr_accessor :status, :order_frequency
   def initialize(name, address, phone)
     @name = name
     @address = address
     @phone = phone
     @status = false
-    @orders = 0
+    @order_frequency = 0
   end
 
   def profile
@@ -19,11 +19,11 @@ class Customer
   end
 
   def place_order(item, time)
-    @orders += 1
+    @order_frequency += 1
     @status = true
   end
 
   def frequent_customer?
-    @orders >= 3
+    @order_frequency >= 3
   end
 end
