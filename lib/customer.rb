@@ -1,6 +1,7 @@
 require 'pry'
 class Customer
-  attr_reader :profile, :order_frequency
+  attr_reader :profile, :order_frequency, :order, :recent_order_frequency
+
   def initialize(name, address, phone)
     @profile = {
       :name => name,
@@ -13,7 +14,7 @@ class Customer
   end
 
   def order_in_place?
-    @order
+    order
   end
 
   def place_order(pizza, time)
@@ -25,7 +26,7 @@ class Customer
   end
 
   def frequent_customer?
-    if (@order_frequency >= 3) && (@recent_order_frequency >= 3)
+    if (order_frequency >= 3) && (recent_order_frequency >= 3)
       true
     else
       false
