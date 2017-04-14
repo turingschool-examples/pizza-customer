@@ -1,40 +1,34 @@
 require 'pry'
 class Customer
-  attr_reader :profile, :orders, :order_frequency
-
+  attr_reader :profile, :order_frequency
   def initialize(name, address, phone)
     @profile = {
       :name => name,
       :address => address,
       :phone => phone
     }
-    @orders = {}
+    @order = false
     @order_frequency = 0
-    @frequent = nil
+    @recent_order_frequency = 0
   end
 
   def order_in_place?
-    if orders.empty?
-      false
-    else
-      true
-    end
+    @order
   end
 
   def place_order(pizza, time)
+    @order = true
     @order_frequency += 1
-    orders[pizza] = time
-  end
-
-  def frequent_customer?
-    if orders.count < 3
-      false
-    elsif 
-      true
+    if (time.mjd - DateTime.now.mjd).abs <= 30
+      @recent_order_frequency += 1
     end
   end
 
-  def last_30_days
-    binding.pry
+  def frequent_customer?
+    if (@order_frequency >= 3) && (@recent_order_frequency >= 3)
+      true
+    else
+      false
+    end
   end
 end
