@@ -13,14 +13,14 @@ class Pizza
 
   def full_order
     {
-      :size => size,
-      :type => type,
-      :crust => crust
+      size: size,
+      type: type,
+      crust: crust
     }
   end
 
   def calculate_price
-    find_price.reduce(0) { |sum, price| sum + price}
+    find_price.reduce(0) { |sum, price| sum + price }
   end
 
   def find_price

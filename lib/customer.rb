@@ -14,9 +14,9 @@ class Customer
 
   def profile
     {
-      :name => name,
-      :address => address,
-      :phone => phone
+      name: name,
+      address: address,
+      phone: phone
     }
   end
 
@@ -35,7 +35,7 @@ class Customer
     last_month = today - 30
 
     if @order_record.count >= 3
-      validate_last_3_orders(last_month).all? { |value| value == true}
+      validate_last_3_orders(last_month).all? { |value| value == true }
     end
   end
 
@@ -43,7 +43,9 @@ class Customer
     validation = []
 
     3.times do
-      validation = @order_record.map {|value_pair| value_pair[0] > last_month}
+      validation = @order_record.map do
+        |value_pair| value_pair[0] > last_month
+      end
     end
 
     validation
