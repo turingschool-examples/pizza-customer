@@ -1,5 +1,5 @@
 require './test/test_helper'
-
+require 'date'
 require './lib/customer'
 require './lib/pizza'
 
@@ -39,8 +39,11 @@ class CustomerTest < Minitest::Test
     assert_equal 0, customer.order_frequency
 
     customer.place_order(pizza, DateTime.now)
-
     assert_equal 1, customer.order_frequency
+
+    customer.place_order(pizza, DateTime.now)
+    customer.place_order(pizza, DateTime.now)
+    assert_equal 3, customer.order_frequency
   end
 
   def test_frequent_customer?
