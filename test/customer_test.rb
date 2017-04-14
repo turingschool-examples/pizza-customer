@@ -47,6 +47,22 @@ class CustomerTest < Minitest::Test
     refute customer.frequent_customer?
   end
 
+  def test_that_customer_ordered_in_last_30_days
+    refute customer.frequent_customer?
+
+    long_ago_time   = DateTime.new(2016, 11, 19)
+    even_longer_ago = DateTime.new(2016, 02, 23)
+
+    3.times { customer.place_order(pizza, DateTime.now) }
+    assert customer.ordered_in_last_30_days?
+    
+    customer.place_order(pizza, long_ago_time)
+    customer.place_order(pizza, even_longer_ago)
+
+    refute customer.ordered_in_last_30_days?
+  end
+
+
   def test_customer_becomes_frequent_after_3_orders_in_past_30_days
     refute customer.frequent_customer?
 

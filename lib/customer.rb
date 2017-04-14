@@ -30,7 +30,15 @@ class Customer
   end
 
   def ordered_in_last_30_days?
-    (@orders[-1][:time] - @orders[-3][:time]).abs.to_i <= 30
+    time_span(sorted_orders[0], sorted_orders[2]) <= 30
+  end
+
+  def time_span(date1, date2)
+    (date1[:time] - date2[:time]).abs.to_i
+  end
+
+  def sorted_orders
+    @orders.sort_by { |order| order[:time] }
   end
 
 end
