@@ -1,4 +1,4 @@
-
+require 'date'
 
 class Customer
   attr_accessor :status, :order_frequency
@@ -8,6 +8,7 @@ class Customer
     @phone = phone
     @status = false
     @order_frequency = 0
+    @order_split = 0
   end
 
   def profile
