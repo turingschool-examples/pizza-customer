@@ -16,7 +16,8 @@ class Pizza
   end
 
   def calculate_price
-    find_pizza_prices = pizza_prices[full_order]
+    full_order
+    find_pizza_prices = pizza_prices.fetch_values
     binding.pry
   end
 

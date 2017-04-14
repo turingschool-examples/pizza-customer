@@ -3,7 +3,7 @@ require 'pry'
 require './lib/pizza'
 
 class Customer
-  attr_reader :name, :address, :phone, :order_placed
+  attr_reader :name, :address, :phone, :order_placed, :date
   attr_accessor :order
 
   def initialize(name, address, phone, order=0)
@@ -27,6 +27,7 @@ class Customer
 
   def place_order(order, date)
     @order += 1
+    @date = DateTime.now
     order_in_place?
   end
 
@@ -35,7 +36,7 @@ class Customer
   end
 
   def frequent_customer?
-    if @order >= 3 && 
+    if @order >= 3 && @date < 30
       true
     else
       false
