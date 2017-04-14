@@ -2,6 +2,7 @@ require './lib/prices'
 
 class Pizza
   include Prices
+
   def initialize(size, type, crust)
     @size, @type, @crust = size, type, crust
   end
@@ -15,7 +16,7 @@ class Pizza
   end
 
   def calculate_price
-    pizza_prices[:size][@size.to_sym] + 
+    pizza_prices[:size][@size.to_sym] +
     pizza_prices[:type][@type.to_sym] +
     pizza_prices[:crust][@crust.to_sym] 
   end

@@ -1,5 +1,6 @@
 
 class Customer
+
   def initialize(name, address, phone)
     @name = name
     @address = address
@@ -47,7 +48,7 @@ class Customer
       false
     end
   end
-  
+
   def orders_into_date_numbers
     @orders.map{|order| order.mjd}
   end
