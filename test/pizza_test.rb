@@ -1,5 +1,5 @@
-require './test/test_helper'
-require './lib/pizza'
+require_relative '../test/test_helper'
+require_relative '../lib/pizza'
 
 class PizzaTest < Minitest::Test
   attr_reader :pizza
