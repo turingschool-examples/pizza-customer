@@ -28,6 +28,15 @@ class Customer
   end
 
   def frequent_customer?
-    true if orders.length > 2
+    if ( orders.length > 2 ) && orders_are_recent?
+      true
+    else
+      false
+    end
+  end
+
+  def orders_are_recent?
+    # check if the last three orders were in the last 30 days.
+    # if they are, return true. else, return false
   end
 end

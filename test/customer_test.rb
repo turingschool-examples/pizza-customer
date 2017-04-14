@@ -60,18 +60,18 @@ class CustomerTest < Minitest::Test
     assert_equal 3, customer.order_frequency
     assert customer.frequent_customer?
   end
-  #
-  # def test_customer_not_frequent_with_more_than_3_orders_in_more_than_30_days
-  #   refute customer.frequent_customer?
-  #
-  #   long_ago_time   = DateTime.new(2016, 11, 19)
-  #   even_longer_ago = DateTime.new(2016, 02, 23)
-  #
-  #   customer.place_order(pizza, DateTime.now)
-  #   customer.place_order(pizza, long_ago_time)
-  #   customer.place_order(pizza, even_longer_ago)
-  #
-  #   assert_equal 3, customer.order_frequency
-  #   refute customer.frequent_customer?
-  # end
+
+  def test_customer_not_frequent_with_more_than_3_orders_in_more_than_30_days
+    refute customer.frequent_customer?
+
+    long_ago_time   = DateTime.new(2016, 11, 19)
+    even_longer_ago = DateTime.new(2016, 02, 23)
+
+    customer.place_order(pizza, DateTime.now)
+    customer.place_order(pizza, long_ago_time)
+    customer.place_order(pizza, even_longer_ago)
+
+    assert_equal 3, customer.order_frequency
+    refute customer.frequent_customer?
+  end
 end
