@@ -1,33 +1,40 @@
 require "./lib/prices"
-
+require "pry"
 class Pizza
-attr_reader :size, :type, :crust, :pizza
+attr_reader :new_order
 include Prices
 
   def initialize(size, type, crust)
-    @size = size
-    @type = type
-    @crust = crust
-    @new_order = {}
+    @new_order = {
+      size: size,
+      type: type,
+      crust: crust
+    }
+
   end
 
   def full_order
-    new_order = {size: @size, type: @type, crust: @crust}
+    new_order
   end
 
   def calculate_price
-    #-if no parameters are passed in the pizza has a default value of $12.50
-    #for the test, as it's operating on the values from the "test_full_order" test.
-    #-should return a sum of prices based on the "pizza prices" method in
-    #the prices module.
-    #-test passing with dummy calues passsed in. Must access hash in prices module!
-
-    size_price = 7.00#return from prices module
-    type_price = 6.00#return from prices module
-    #if type == "cheese" equals "cheese" price, else returns the "special" price
-    crust_price = 2.00#return from prices module
+    size_price = pizza_prices[:size][full_order[:size].to_sym]
+    type_price = check_specials
+    crust_price = pizza_prices[:crust][full_order[:crust].to_sym]
+    # binding.pry
 
     size_price + type_price + crust_price
   end
 
+  def check_specials
+    if full_order[:type] == "cheese"
+      pizza_prices[:type][:cheese]
+    else
+      pizza_prices[:type][:special]
+    end
+
+  end
 end
+# #
+# pizza = Pizza.new("medium", "cheese", "deep dish")
+# ""
