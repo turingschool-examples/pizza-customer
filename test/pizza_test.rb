@@ -8,7 +8,7 @@ class PizzaTest < Minitest::Test
 
   def setup
     @pizza = Pizza.new("medium", "cheese", "deep dish")
-    
+
   end
 
   def test_it_exists
@@ -16,7 +16,6 @@ class PizzaTest < Minitest::Test
   end
 
   def test_full_order
-    skip
     new_order = {
       size: "medium",
       type: "cheese",
@@ -27,7 +26,7 @@ class PizzaTest < Minitest::Test
   end
 
   def test_calculate_price
-    skip
+    
     assert_equal 12.50, pizza.calculate_price
   end
 
