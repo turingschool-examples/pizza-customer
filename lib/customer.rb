@@ -31,4 +31,8 @@ class Customer
     @order_frequency += 1
   end
 
+  def frequent_customer?
+    true if @order_frequency > 2
+  end
+
 end
