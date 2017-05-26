@@ -2,13 +2,18 @@ require './lib/pizza.rb'
 
 class Customer
 
-  attr_reader :name, :address, :phone, :order_in_place
+  attr_reader :name,
+              :address,
+              :phone,
+              :order_in_place,
+              :order_frequency
 
   def initialize(name, address, phone)
     @name = name
     @address = address
     @phone = phone
     @order_in_place = false
+    @order_frequency = 0
   end
 
   def profile
@@ -23,6 +28,7 @@ class Customer
 
   def place_order(pizza, date_time)
     @order_in_place = true
+    @order_frequency += 1
   end
 
 end
