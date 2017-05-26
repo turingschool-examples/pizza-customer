@@ -1,10 +1,11 @@
 class Customer
 
-  attr_reader :order_frequency
+  attr_reader :order_frequency, :date
 
   def initialize(name, address, phone_number)
     @order_in_place = false
     @order_frequency = 0
+    @date = []
   end
 
   def profile
@@ -16,6 +17,7 @@ class Customer
   end
 
   def place_order(pizza, date)
+    @date << date
     @order_in_place = true
     @order_frequency += 1
   end
@@ -26,9 +28,14 @@ class Customer
 
   def frequent_customer?
     if @order_frequency >= 3
-      true
+      check_when_ordered(order_frequency)
     else
       false
     end
+  end
+
+  def check_when_ordered(order_frequency)
+    date.each do |day|
+      if day - (day - 2) >
   end
 end

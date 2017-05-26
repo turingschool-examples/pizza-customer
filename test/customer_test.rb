@@ -59,7 +59,6 @@ class CustomerTest < Minitest::Test
   end
 
   def test_customer_not_frequent_with_more_than_3_orders_in_more_than_30_days
-    skip
     refute customer.frequent_customer?
 
     long_ago_time   = Time.new(2016, 11, 19)
