@@ -4,6 +4,7 @@ class Customer
 
   def initialize(name, address, phone)
     @order_status = false
+    @order_frequency = 0
 
   end
 
@@ -19,6 +20,11 @@ class Customer
 
   def place_order(pizza, time)
     @order_status = true
+    @order_frequency += 1
+  end
+
+  def order_frequency
+    @order_frequency
   end
 
 end
