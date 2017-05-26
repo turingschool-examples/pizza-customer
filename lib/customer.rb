@@ -4,7 +4,8 @@ require_relative 'pizza'
 class Customer
   attr_reader :name,
               :address,
-              :phone
+              :phone,
+              :frequency
 
   def initialize(name, address, phone)
     @name = name
@@ -32,11 +33,15 @@ class Customer
   end
 
   def order_frequency
-    false
+    frequency
   end
 
   def frequent_customer?
-    false
+    if @frequency >= 3
+      true
+    else
+      false
+    end
   end
 
 end
