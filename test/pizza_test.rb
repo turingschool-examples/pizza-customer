@@ -1,6 +1,7 @@
 require './test/test_helper'
 require './lib/pizza'
 
+
 class PizzaTest < Minitest::Test
   attr_reader :pizza
 
@@ -28,7 +29,6 @@ class PizzaTest < Minitest::Test
 
   def test_calculate_another_price
     pizza_2 = Pizza.new("large", "black olive", "thin")
-
     assert_equal 15.00, pizza_2.calculate_price
   end
 end
