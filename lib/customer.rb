@@ -22,4 +22,8 @@ class Customer
   def place_order(pizza, time)
     orders[time] = pizza
   end
+
+  def order_frequency
+    orders.keys.length
+  end
 end
