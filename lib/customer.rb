@@ -25,6 +25,10 @@ class Customer
   end
 
   def frequent_customer?
-    false
+    if @order_frequency >= 3
+      true
+    else
+      false
+    end
   end
 end
