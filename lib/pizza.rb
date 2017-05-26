@@ -1,13 +1,18 @@
 class Pizza
 
-  def initialize(size, style, crust)
+  attr_reader :size, :style, :crust
+
+  def initialize(size="medium", style="cheese", crust="deep_dish")
+    @size = size
+    @style = style
+    @crust = crust
   end
 
   def full_order
     new_order = {
-      size: "medium",
-      type: "cheese",
-      crust: "deep dish"
+      size: size,
+      type: style,
+      crust: crust
     }
   end
 
