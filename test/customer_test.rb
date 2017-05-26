@@ -30,7 +30,7 @@ class CustomerTest < Minitest::Test
   end
 
   def test_place_order
-    customer.place_order(pizza, DateTime.now)
+    customer.place_order(pizza, Time.now)
 
     assert customer.order_in_place?
   end
@@ -38,7 +38,7 @@ class CustomerTest < Minitest::Test
   def test_order_frequency
     assert_equal 0, customer.order_frequency
 
-    customer.place_order(pizza, DateTime.now)
+    customer.place_order(pizza, Time.now)
 
     assert_equal 1, customer.order_frequency
   end
@@ -51,7 +51,7 @@ class CustomerTest < Minitest::Test
     refute customer.frequent_customer?
 
     3.times do
-      customer.place_order(pizza, DateTime.now)
+      customer.place_order(pizza, Time.now)
     end
 
     assert_equal 3, customer.order_frequency
@@ -61,10 +61,10 @@ class CustomerTest < Minitest::Test
   def test_customer_not_frequent_with_more_than_3_orders_in_more_than_30_days
     refute customer.frequent_customer?
 
-    long_ago_time   = DateTime.new(2016, 11, 19)
-    even_longer_ago = DateTime.new(2016, 02, 23)
+    long_ago_time   = Time.new(2016, 11, 19)
+    even_longer_ago = Time.new(2016, 02, 23)
 
-    customer.place_order(pizza, DateTime.now)
+    customer.place_order(pizza, Time.now)
     customer.place_order(pizza, long_ago_time)
     customer.place_order(pizza, even_longer_ago)
 
