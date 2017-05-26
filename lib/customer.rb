@@ -11,4 +11,8 @@ class Customer
     }
   end
 
+  def order_in_place?
+    false
+  end
+
 end
