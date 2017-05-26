@@ -9,10 +9,12 @@ class PizzaTest < Minitest::Test
   end
 
   def test_it_exists
+    skip
     assert_instance_of Pizza, pizza
   end
 
   def test_full_order
+    skip
     new_order = {
       size: "medium",
       type: "cheese",

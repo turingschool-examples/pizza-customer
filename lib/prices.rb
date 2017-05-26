@@ -1,3 +1,6 @@
+  require'pry'
+  
+
 module Prices
   def pizza_prices
     {
@@ -16,5 +19,7 @@ module Prices
         "deep dish": 4.00
       }
     }
+
   end
+binding.pry
 end
