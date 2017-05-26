@@ -1,5 +1,8 @@
 class Pizza
-  def initialize(size, topping, style)
-    
+
+  def initialize(size, type, crust)
+    @size = size
+    @type = type
+    @crust = crust
   end
 end
