@@ -57,7 +57,7 @@ class CustomerTest < Minitest::Test
     assert_equal 3, customer.order_frequency
     assert customer.frequent_customer?
   end
-
+  
   def test_customer_not_frequent_with_more_than_3_orders_in_more_than_30_days
     refute customer.frequent_customer?
 
