@@ -26,4 +26,8 @@ class Customer
   def order_frequency
     orders.keys.length
   end
+
+  def frequent_customer?
+    
+  end
 end
