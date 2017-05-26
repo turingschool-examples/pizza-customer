@@ -19,7 +19,7 @@ class PizzaTest < Minitest::Test
       crust: "deep dish"
     }
 
-    assert_equal new_order, pizza.full_order
+    assert_equal new_order, pizza.new_order
   end
 
   def test_calculate_price
