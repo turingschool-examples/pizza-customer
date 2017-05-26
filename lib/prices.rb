@@ -8,7 +8,7 @@ module Prices
       },
       type: {
         "cheese": 3.00,
-        "special": 6.00
+        "special": 6.00,
       },
       crust: {
         "regular": 3.00,
