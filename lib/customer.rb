@@ -5,6 +5,7 @@ class Customer
   def initialize(name, address, phone)
     @order_status = false
     @order_frequency = 0
+    @frequent_customer = false
 
   end
 
@@ -28,7 +29,10 @@ class Customer
   end
 
   def frequent_customer?
-    false
+    if @order_frequency == 3
+      @frequent_customer = true
+    end
+    @frequent_customer
   end
 
 end
