@@ -1,7 +1,5 @@
 class Customer
 
-  attr_reader :order_in_place
-
   def initialize(name, address, phone_number)
     @order_in_place = false
   end
@@ -16,6 +14,10 @@ class Customer
 
   def place_order(pizza, date)
     @order_in_place = true
+  end
+
+  def order_in_place?
+    @order_in_place
   end
 
 end
