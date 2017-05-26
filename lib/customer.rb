@@ -6,12 +6,12 @@ class Customer
     @address = address
     @phone = phone
     @order_frequency = 0
-    @order = []
+    @order = {}
     @order_time = nil
     @pizza_order = nil
   end
 
-  def customer_profile
+  def profile
     profile = {
     :name => @name,
     :address => @address,
@@ -24,7 +24,7 @@ class Customer
   end
 
   def place_order(order, time)
-    @order << order
+    @order[DateTime.now] = order
     @order_time = DateTime.now
     @order_in_place = true
     @order_frequency += 1
