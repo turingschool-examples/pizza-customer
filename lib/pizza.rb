@@ -1,6 +1,13 @@
+require './lib/prices'
+
+require 'pry'
+
+
+
 class Pizza
-#attr_reader :size, :type, :crust
-  #include Prices
+  include Prices
+  attr_reader :size, :type, :crust
+
 
   def initialize(size, type, crust)
     @size = size
@@ -17,4 +24,12 @@ class Pizza
     }
   end
 
+  def calculate_price
+    pizza.pizza_prices[:size].size
+
+  end
+binding.pry
+
 end
+
+pizza = Pizza::Pizza.new("medium", "cheese", "deep dish")

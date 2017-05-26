@@ -14,6 +14,7 @@ class PizzaTest < Minitest::Test
   end
 
   def test_full_order
+    skip
     new_order = {
       size: "medium",
       type: "cheese",
