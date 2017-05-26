@@ -6,7 +6,7 @@ class Customer
     @address = address
     @phone = phone
     @order_frequency = 0
-    @order = nil
+    @order = []
     @order_time = nil
     @pizza_order = nil
   end
@@ -24,7 +24,7 @@ class Customer
   end
 
   def place_order(order, time)
-    @order = order
+    @order << order
     @order_time = DateTime.now
     @order_in_place = true
     @order_frequency += 1
@@ -35,7 +35,7 @@ class Customer
   end
 
   def frequent_customer?
-    @order_frequency > 1 ? true : false
+    @order_frequency > 2 ? true : false
   end
 
 
