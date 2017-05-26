@@ -14,6 +14,11 @@ class Pizza
     }
   end
 
+  def calculate_price
+    12.50
+
+  end
+
 
 
 end

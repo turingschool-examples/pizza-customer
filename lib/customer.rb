@@ -1,3 +1,5 @@
+require 'date'
+require 'time'
 require_relative 'pizza'
 class Customer
   attr_accessor :name,
@@ -29,7 +31,6 @@ class Customer
 
   def place_order(pizza, date_time)
     @order_in_place = true
-
 
   end
 

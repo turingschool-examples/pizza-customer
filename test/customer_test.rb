@@ -28,20 +28,20 @@ class CustomerTest < Minitest::Test
   def test_order_in_place?
     refute customer.order_in_place?
   end
-  
+
   def test_place_order
     customer.place_order(pizza, DateTime.now)
 
     assert customer.order_in_place?
   end
-  #
-  # def test_order_frequency
-  #   assert_equal 0, customer.order_frequency
-  #
-  #   customer.place_order(pizza, DateTime.now)
-  #
-  #   assert_equal 1, customer.order_frequency
-  # end
+  
+  def test_order_frequency
+    assert_equal 0, customer.order_frequency
+
+    customer.place_order(pizza, DateTime.now)
+
+    assert_equal 1, customer.order_frequency
+  end
   #
   # def test_frequent_customer?
   #   refute customer.frequent_customer?
