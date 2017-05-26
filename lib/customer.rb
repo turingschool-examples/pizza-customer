@@ -1,6 +1,9 @@
+require './lib/pizza.rb'
+
 class Customer
 
   def initialize(name, address, phone)
+    @order_status = false
 
   end
 
@@ -11,7 +14,11 @@ class Customer
   end
 
   def order_in_place?
-    false
+    @order_status
+  end
+
+  def place_order(pizza, time)
+    @order_status = true
   end
 
 end
