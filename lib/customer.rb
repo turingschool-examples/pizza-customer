@@ -17,6 +17,7 @@ class Customer
       false
     else
       true
+    end
   end
 
   def place_order(pizza, time)
