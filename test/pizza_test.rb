@@ -1,4 +1,7 @@
-require './test/test_helper'
+gem 'minitest'
+require 'minitest/autorun'
+require 'minitest/pride'
+# require './test/test_helper'
 require './lib/pizza'
 
 class PizzaTest < Minitest::Test
@@ -23,10 +26,12 @@ class PizzaTest < Minitest::Test
   end
 
   def test_calculate_price
+
     assert_equal 12.50, pizza.calculate_price
   end
 
   def test_calculate_another_price
+
     pizza_2 = Pizza.new("large", "black olive", "thin")
 
     assert_equal 15.00, pizza_2.calculate_price
