@@ -36,8 +36,16 @@ class Customer
 
   def place_order(pizza, date_time)
     @order_in_place = true
-    @test_order_frequency = 1
+    @test_order_frequency += 1
 
+  end
+
+  def frequent_customer?
+    if @test_order_frequency >= 3
+      true
+    else
+      false
+    end
   end
 
 
