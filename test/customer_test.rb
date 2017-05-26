@@ -68,6 +68,7 @@ class CustomerTest < Minitest::Test
     customer.place_order(pizza, long_ago_time)
     customer.place_order(pizza, even_longer_ago)
 
+
     assert_equal 3, customer.order_frequency
     refute customer.frequent_customer?
   end
