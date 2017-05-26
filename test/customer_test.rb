@@ -16,7 +16,6 @@ class CustomerTest < Minitest::Test
   end
 
   def test_customer_profile
-    skip
     profile = {
       name: "Lauren",
       address: "1700 Blake St.",
