@@ -1,3 +1,4 @@
+require './lib/prices.rb'
 class Pizza
 
   attr_reader :size, :type, :crust, :new_order
