@@ -9,6 +9,7 @@ class PizzaTest < Minitest::Test
   end
 
   def test_it_exists
+    skip
     assert_instance_of Pizza, pizza
   end
 
