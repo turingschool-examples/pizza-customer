@@ -34,7 +34,7 @@ class CustomerTest < Minitest::Test
 
     assert customer.order_in_place?
   end
-  
+
   def test_order_frequency
     assert_equal 0, customer.order_frequency
 
@@ -42,10 +42,10 @@ class CustomerTest < Minitest::Test
 
     assert_equal 1, customer.order_frequency
   end
-  #
-  # def test_frequent_customer?
-  #   refute customer.frequent_customer?
-  # end
+  
+  def test_frequent_customer?
+    refute customer.frequent_customer?
+  end
   #
   # def test_customer_becomes_frequent_after_3_orders_in_past_30_days
   #   refute customer.frequent_customer?
