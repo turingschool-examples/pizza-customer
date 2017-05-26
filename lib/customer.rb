@@ -5,11 +5,13 @@ class Customer
   end
 
   def profile
-    {
-      name: "Lauren",
+    { name: "Lauren",
       address: "1700 Blake St.",
-      phone: "505-110-1001"
-    }
+      phone: "505-110-1001"}
+  end
+
+  def order_in_place?
+    false
   end
 
 end

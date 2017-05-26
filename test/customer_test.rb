@@ -29,7 +29,7 @@ class CustomerTest < Minitest::Test
   end
 
   def test_order_in_place?
-    skip
+    
     refute customer.order_in_place?
   end
 
