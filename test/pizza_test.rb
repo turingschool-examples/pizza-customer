@@ -1,5 +1,6 @@
 require './test/test_helper'
 require './lib/pizza'
+require './lib/prices'
 
 class PizzaTest < Minitest::Test
   attr_reader :pizza
@@ -9,10 +10,12 @@ class PizzaTest < Minitest::Test
   end
 
   def test_it_exists
+    # skip
     assert_instance_of Pizza, pizza
   end
 
   def test_full_order
+    # skip
     new_order = {
       size: "medium",
       type: "cheese",
@@ -23,10 +26,12 @@ class PizzaTest < Minitest::Test
   end
 
   def test_calculate_price
+    # skip
     assert_equal 12.50, pizza.calculate_price
   end
 
   def test_calculate_another_price
+    skip
     pizza_2 = Pizza.new("large", "black olive", "thin")
 
     assert_equal 15.00, pizza_2.calculate_price
