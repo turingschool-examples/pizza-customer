@@ -28,8 +28,14 @@ class Customer
   end
 
   def frequent_customer?
-    if order_frequency > 2
+    if order_frequency > 2 && !orders_far_apart?
       true
+    end
+  end
+
+  def orders_far_apart?
+    orders.any? do |time, pizza|
+      (DateTime.now - time).to_f > 30
     end
   end
 end
