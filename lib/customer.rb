@@ -23,4 +23,8 @@ class Customer
   def order_in_place?
     @order_in_place
   end
+
+  def frequent_customer?
+    false
+  end
 end
