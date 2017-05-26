@@ -14,4 +14,8 @@ class Customer
       :phone => @phone}
   end
 
+  def order_in_place?
+    false
+  end
+
 end
