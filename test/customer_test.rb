@@ -30,7 +30,6 @@ class CustomerTest < Minitest::Test
   end
 
   def test_place_order
-    skip
     customer.place_order(pizza, DateTime.now)
 
     assert customer.order_in_place?
