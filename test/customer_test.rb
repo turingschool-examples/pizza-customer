@@ -2,6 +2,8 @@ require './test/test_helper'
 
 require './lib/customer'
 require './lib/pizza'
+require 'minitest/autorun'
+require 'minitest/pride'
 
 class CustomerTest < Minitest::Test
   attr_reader :customer, :pizza
@@ -12,6 +14,7 @@ class CustomerTest < Minitest::Test
   end
 
   def test_it_exists
+
     assert_instance_of Customer, customer
   end
 
@@ -26,6 +29,7 @@ class CustomerTest < Minitest::Test
   end
 
   def test_order_in_place?
+
     refute customer.order_in_place?
   end
 
@@ -44,6 +48,7 @@ class CustomerTest < Minitest::Test
   end
 
   def test_frequent_customer?
+
     refute customer.frequent_customer?
   end
 
@@ -59,6 +64,7 @@ class CustomerTest < Minitest::Test
   end
 
   def test_customer_not_frequent_with_more_than_3_orders_in_more_than_30_days
+    skip
     refute customer.frequent_customer?
 
     long_ago_time   = DateTime.new(2016, 11, 19)

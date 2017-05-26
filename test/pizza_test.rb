@@ -1,11 +1,14 @@
 require './test/test_helper'
 require './lib/pizza'
+require 'minitest/autorun'
+require 'minitest/pride'
 
 class PizzaTest < Minitest::Test
   attr_reader :pizza
 
   def setup
     @pizza = Pizza.new("medium", "cheese", "deep dish")
+
   end
 
   def test_it_exists
