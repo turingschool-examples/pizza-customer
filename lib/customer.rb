@@ -27,4 +27,8 @@ class Customer
     @order_frequency
   end
 
+  def frequent_customer?
+    false
+  end
+
 end
