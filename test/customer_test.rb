@@ -36,7 +36,6 @@ class CustomerTest < Minitest::Test
   end
 
   def test_order_frequency
-    skip
     assert_equal 0, customer.order_frequency
 
     customer.place_order(pizza, Time.now)
