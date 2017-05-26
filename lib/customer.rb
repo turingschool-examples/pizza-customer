@@ -28,6 +28,8 @@ class Customer
   end
 
   def frequent_customer?
-    
+    if order_frequency > 2
+      true
+    end
   end
 end
