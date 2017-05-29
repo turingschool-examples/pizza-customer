@@ -11,4 +11,8 @@ class Pizza
      type: "cheese",
      crust: "deep dish"}
   end
+
+  def calculate_price
+    12.5
+  end
 end
