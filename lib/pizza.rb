@@ -1,4 +1,8 @@
+require './lib/prices'
+
 class Pizza
+
+  include Prices
 
   def initialize(size, type, crust)
     @size  = size
@@ -7,12 +11,15 @@ class Pizza
   end
 
   def full_order
-    {size: "medium",
-     type: "cheese",
-     crust: "deep dish"}
+    {size:  @size,
+     type:  @type,
+     crust: @crust}
   end
 
   def calculate_price
-    12.5
+    pizza_prices[:size][full_order[:size].to_sym] +
+    pizza_prices[:type][full_order[:type].to_sym] +
+    pizza_prices[:crust][full_order[:crust].to_sym]
+
   end
 end
