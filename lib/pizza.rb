@@ -1,5 +1,5 @@
 require './lib/prices'
-
+require 'pry'
 class Pizza
 
   include Prices
@@ -22,4 +22,5 @@ class Pizza
     pizza_prices[:crust][full_order[:crust].to_sym]
 
   end
+  # binding.pry
 end
