@@ -11,4 +11,7 @@ class Customer
      address: @address,
      phone:   @phone}
   end
+
+  def order_in_place?
+  end
 end
