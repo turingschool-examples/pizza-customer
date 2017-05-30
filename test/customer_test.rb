@@ -15,15 +15,15 @@ class CustomerTest < Minitest::Test
     assert_instance_of Customer, customer
   end
 
-  # def test_customer_profile
-  #   profile = {
-  #     name: "Lauren",
-  #     address: "1700 Blake St.",
-  #     phone: "505-110-1001"
-  #   }
-  #
-  #   assert_equal profile, customer.profile
-  # end
+  def test_customer_profile
+    profile = {
+      name: "Lauren",
+      address: "1700 Blake St.",
+      phone: "505-110-1001"
+    }
+
+    assert_equal profile, customer.profile
+  end
   #
   # def test_order_in_place?
   #   refute customer.order_in_place?
